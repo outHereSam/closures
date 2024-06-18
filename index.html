@@ -5,13 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="style.css" />
-    <script src="./main.js" defer></script>
 
     <title>Closures and this!</title>
   </head>
   <body>
+    <span>Countdown: </span>
+    <p id="timer"></p>
     <div class="container">
       <button id="thisBtn">Click Me!</button>
     </div>
+
+    <script>
+      const button = document.getElementById("thisBtn");
+
+      const arrowHandleClick = () => {
+        console.log(this.id);
+        console.log(this.textContent);
+      };
+
+      button.addEventListener("click", arrowHandleClick);
+
+      function handleClick() {
+        console.log(this.id);
+        console.log(this.textContent);
+      }
+
+      //   // 4. Reusable Component with closure and this
+      function createTimer(duration, elementId) {
+        let timeLeft = duration;
+        const element = document.getElementById(elementId);
+
+        // Start countdown
+        const timeLeftId = setInterval(() => {
+          element.innerText = timeLeft;
+          if (timeLeft <= 0) {
+            clearInterval(timeLeftId);
+            element.innerText = "Done!";
+            console.log("Countdown has ended.");
+          } else {
+            timeLeft--;
+          }
+        }, 1000);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        createTimer(10, "timer");
+      });
+    </script>
   </body>
 </html>

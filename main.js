@@ -8,37 +8,43 @@ const Person = {
   },
 };
 
-// const newPerson = {
-//   name: "Abbie",
-//   age: 25,
-// };
+const person2 = {
+  name: "John",
+  age: 25,
+};
 
-// const anotherPerson = {
-//   name: "Kofi",
-//   age: 19,
-// };
+const person3 = {
+  name: "Abbie",
+  age: 18,
+};
 
 // Applying greet() using call()
-// const callNewPerson = Person.greet.call(Person);
+const callNewPerson = Person.greet.call(Person);
 
 // Applying greet() using apply()
-// const callPerson = Person.greet.apply(Person);
+const callPerson = Person.greet.apply(Person);
+const callOtherPerson = Person.greet.apply(person2);
 
 // Applying greet() using bind()
 const callPersonFunc = Person.greet.bind(Person);
 
 // callPersonFunc();
 
-const button = document.getElementById("thisBtn");
+// private data and closures and this
+function createCounter() {
+  let count = 0;
 
-const arrowHandleClick = () => {
-  console.log(this.id);
-  console.log(this.textContent);
-};
-
-button.addEventListener("click", arrowHandleClick);
-
-function handleClick() {
-  console.log(this.id);
-  console.log(this.textContent);
+  return {
+    increment: function () {
+      this.count++;
+      console.log(this.count);
+    },
+    getCount: function () {
+      return this.count;
+    },
+  };
 }
+
+let counterObj = createCounter();
+counterObj.increment();
+console.log(counterObj.getCount());
