@@ -27,4 +27,18 @@ const Person = {
 // Applying greet() using bind()
 const callPersonFunc = Person.greet.bind(Person);
 
-callPersonFunc();
+// callPersonFunc();
+
+const button = document.getElementById("thisBtn");
+
+const arrowHandleClick = () => {
+  console.log(this.id);
+  console.log(this.textContent);
+};
+
+button.addEventListener("click", arrowHandleClick);
+
+function handleClick() {
+  console.log(this.id);
+  console.log(this.textContent);
+}
