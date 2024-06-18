@@ -18,8 +18,6 @@ const anotherPerson = {
   age: 19,
 };
 
+// Applying greet() using call()
 const callNewPerson = Person.greet.call(newPerson);
 const callAnotherPerson = Person.greet.call(anotherPerson);
-
-// console.log(callNewPerson);
-// console.log(callAnotherPerson);
