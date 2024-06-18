@@ -19,5 +19,9 @@ const anotherPerson = {
 };
 
 // Applying greet() using call()
-const callNewPerson = Person.greet.call(newPerson);
-const callAnotherPerson = Person.greet.call(anotherPerson);
+// const callNewPerson = Person.greet.call(newPerson);
+// const callAnotherPerson = Person.greet.call(anotherPerson);
+
+// Applying greet() using app()
+const appliedPerson = Person.greet.apply(newPerson);
+const appliedAnotherPerson = Person.greet.apply(anotherPerson);
