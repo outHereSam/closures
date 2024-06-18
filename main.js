@@ -8,20 +8,23 @@ const Person = {
   },
 };
 
-const newPerson = {
-  name: "Abbie",
-  age: 25,
-};
+// const newPerson = {
+//   name: "Abbie",
+//   age: 25,
+// };
 
-const anotherPerson = {
-  name: "Kofi",
-  age: 19,
-};
+// const anotherPerson = {
+//   name: "Kofi",
+//   age: 19,
+// };
 
 // Applying greet() using call()
-// const callNewPerson = Person.greet.call(newPerson);
-// const callAnotherPerson = Person.greet.call(anotherPerson);
+// const callNewPerson = Person.greet.call(Person);
 
-// Applying greet() using app()
-const appliedPerson = Person.greet.apply(newPerson);
-const appliedAnotherPerson = Person.greet.apply(anotherPerson);
+// Applying greet() using apply()
+// const callPerson = Person.greet.apply(Person);
+
+// Applying greet() using bind()
+const callPersonFunc = Person.greet.bind(Person);
+
+callPersonFunc();
