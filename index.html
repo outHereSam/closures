@@ -32,8 +32,8 @@
 
       //   // 4. Reusable Component with closure and this
       function createTimer(duration, elementId) {
-        let timeLeft = duration;
         const element = document.getElementById(elementId);
+        let timeLeft = duration;
 
         // Start countdown
         const timeLeftId = setInterval(() => {

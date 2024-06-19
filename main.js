@@ -31,6 +31,12 @@ const callPersonFunc = Person.greet.bind(Person);
 // callPersonFunc();
 
 // private data and closures and this
+/**
+ * `this` inside the increment method does not refer
+ * to the closure's environment but rather to the object
+ * that is being returned by the outer function.
+ *
+ */
 function createCounter() {
   let count = 0;
 
@@ -45,6 +51,9 @@ function createCounter() {
   };
 }
 
-let counterObj = createCounter();
-counterObj.increment();
-console.log(counterObj.getCount());
+// let counterObj = createCounter();
+// counterObj.increment();
+// createCounter().increment();
+// createCounter().increment();
+// console.log(createCounter().getCount());
+createCounter();
