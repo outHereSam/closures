@@ -18,12 +18,17 @@
     <script>
       const button = document.getElementById("thisBtn");
 
+      /**
+       * Using the arrow function, the console log shows undefined for this
+       * as this in arrow functions refers to the global scope or the surrounding
+       * non-arrow function
+       */
       const arrowHandleClick = () => {
         console.log(this.id);
         console.log(this.textContent);
       };
 
-      button.addEventListener("click", arrowHandleClick);
+      button.addEventListener("click", handleClick);
 
       function handleClick() {
         console.log(this.id);
